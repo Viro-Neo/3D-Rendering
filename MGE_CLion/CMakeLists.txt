@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.26)
 project(MGE_CLion)
 
+if(NOT PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
+    # Git auto-ignore out-of-source build directory
+    file(GENERATE OUTPUT .gitignore CONTENT "*")
+endif()
+
 set(CMAKE_CXX_STANDARD 17)
 file(GLOB_RECURSE SOURCES
         mge/*.h
