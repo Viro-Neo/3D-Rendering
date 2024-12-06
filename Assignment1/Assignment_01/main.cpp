@@ -38,14 +38,20 @@ int main () {
 
     //declare the data to upload
     const GLfloat vertices[] = {
-            //1 triangles, 3 vertices per triangle, 4 floats per vertex
+            //2 triangles, 3 vertices per triangle, 4 floats per vertex
             -0.5f, -0.5f, 0,
             0.5f, -0.5f, 0,
-            0, 0.5f, 0
+            0.5f, 0.5f, 0,
+            -0.5f, -0.5f, 0,
+            -0.5f, 0.5f, 0,
+            0.5f, 0.5f, 0
     };
 
     const GLfloat colors[] {
             //1 triangle, 3 vertices per triangle, 1 color per vertex, 4 "floats" per color RGBA
+            1,1,0,
+            1,1,0,
+            1,1,0,
             1,1,0,
             1,1,0,
             1,1,0
@@ -117,7 +123,7 @@ int main () {
 
         // Bind the VAO and draw the triangle
         glBindVertexArray(vao);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 2*3);
         glBindVertexArray(0);
 
         glDisableVertexAttribArray(vertexIndex);
