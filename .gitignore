@@ -47,3 +47,7 @@ CMakeUserPresets.json
 
 # IDE files
 .idea
+
+# Course files
+*.jpg
+*.png
